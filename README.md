@@ -6,5 +6,5 @@ Formulas to instal kosli cli with homebrew
 
 To install latest available version of kosli cli run
 ```
-brew install kosli-dev/kosli/kosli
+brew install kosli-dev/tap/kosli
 ```
