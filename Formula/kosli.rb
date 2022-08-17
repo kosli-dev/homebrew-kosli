@@ -7,7 +7,7 @@ class Kosli < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "http://github.com/kosli-dev/cli/releases/v0.1.6/kosli_0.1.6_darwin_arm64.tar.gz"
+      url "https://github.com/kosli-dev/cli/releases/v0.1.6/kosli_0.1.6_darwin_arm64.tar.gz"
       sha256 "53e39f9cebbeb8c36aaf33f2e5b2c77219d1346db1f311ca50c370258a64e363"
 
       def install
