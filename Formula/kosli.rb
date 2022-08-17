@@ -1,30 +1,21 @@
 class Kosli < Formula
   desc "A CLI client for reporting compliance events to  https://kosli.com"
-  homepage "https://docs.kosli.com"
-  url "https://github.com/kosli-dev/cli.git",
-    tag: "v0.1.6",
-    revision: "c3df5c469259e321b9de4158999948b7f331b29a" 
-  head "https://github.com/kosli-dev/cli.git", branch: "main"
+  homepage "https://kosli.com/"
+  version "0.1.6"
   license "MIT"
+  depends_on :macos
 
-  depends_on "go" => :build
+  on_macos do
+    if Hardware::CPU.arm?
+      url "http://https://github.com/kosli-dev/cli/releases/v0.1.6/kosli_0.1.6_darwin_arm64.tar.gz"
+      sha256 "53e39f9cebbeb8c36aaf33f2e5b2c77219d1346db1f311ca50c370258a64e363"
 
-  def install
-    # Don't dirty the git tree
-    rm_rf ".brew_home"
-    system "make", "build"
-    bin.install "kosli"
-  end
-
-  test do
-    system "#{bin}/kosli", "version"
-    version_output = shell_output(bin/"kosli version 2>&1")
-    assert_match "GitTreeState:\"clean\"", version_output
-
-    if build.stable?
-      revision = stable.specs[:revision]
-      assert_match "GitCommit:\"#{revision}\"", version_output
-      assert_match "Version:\"v#{version}\"", version_output
+      def install
+        bin.install "kosli"
+        ...
+      end
     end
   end
+
+  depends_on "go"
 end
