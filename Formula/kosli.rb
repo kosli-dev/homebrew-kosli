@@ -12,7 +12,6 @@ class Kosli < Formula
 
       def install
         bin.install "kosli"
-        ...
       end
     end
   end
