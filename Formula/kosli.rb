@@ -5,23 +5,23 @@
 class Kosli < Formula
   desc "CLI client for reporting compliance events to  https://kosli.com"
   homepage "https://kosli.com/"
-  version "0.1.23"
+  version "0.1.24"
   license "MIT"
 
   depends_on "go"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/kosli-dev/cli/releases/download/v0.1.23/kosli_0.1.23_darwin_amd64.tar.gz"
-      sha256 "aabf40642e0aaeb7ca17e99ae43f022cc3670a20dfadff7200469149fc8f4c51"
+    if Hardware::CPU.arm?
+      url "https://github.com/kosli-dev/cli/releases/download/v0.1.24/kosli_0.1.24_darwin_arm64.tar.gz"
+      sha256 "555083c25a46f1fbc0395e5e3ec43cef334e640bbcd6258ed51f16bc2a4a3bdb"
 
       def install
         bin.install "kosli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/kosli-dev/cli/releases/download/v0.1.23/kosli_0.1.23_darwin_arm64.tar.gz"
-      sha256 "76c8e222e1cc9d4c32f63c08b159f845b43436710c96f419c27e9a6528ba6b44"
+    if Hardware::CPU.intel?
+      url "https://github.com/kosli-dev/cli/releases/download/v0.1.24/kosli_0.1.24_darwin_amd64.tar.gz"
+      sha256 "7105a1bd7e9dbb0ca9e3a6d9ebc89d099072069db1049fb296a7670a2651a2a6"
 
       def install
         bin.install "kosli"
@@ -30,25 +30,25 @@ class Kosli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/kosli-dev/cli/releases/download/v0.1.23/kosli_0.1.23_linux_armv6.tar.gz"
-      sha256 "61fce288e6591a8f8e55c86e43344ad281f53b8fe5358876fb34406a770d1b3b"
-
-      def install
-        bin.install "kosli"
-      end
-    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kosli-dev/cli/releases/download/v0.1.23/kosli_0.1.23_linux_arm64.tar.gz"
-      sha256 "b97276d49d4da09bd979e00b6dfabca002817a6a3e2bfc8815cf0931db09c1aa"
+      url "https://github.com/kosli-dev/cli/releases/download/v0.1.24/kosli_0.1.24_linux_arm64.tar.gz"
+      sha256 "e45b0d8f52a38f5e8bf36c2d1fbaebd188de51ae9a9e2a92482ad3e09ba8e62f"
 
       def install
         bin.install "kosli"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/kosli-dev/cli/releases/download/v0.1.23/kosli_0.1.23_linux_amd64.tar.gz"
-      sha256 "46c444fcad62733e9b891c5abee1765860ab13a1ce95a1455a0329c79fd57ea5"
+      url "https://github.com/kosli-dev/cli/releases/download/v0.1.24/kosli_0.1.24_linux_amd64.tar.gz"
+      sha256 "668466fb831fb4a77a622f2f79b01527fdec944c82fb1141e179fe6a954b46c8"
+
+      def install
+        bin.install "kosli"
+      end
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/kosli-dev/cli/releases/download/v0.1.24/kosli_0.1.24_linux_armv6.tar.gz"
+      sha256 "938e2fe465ca076e6347580df50c834a775b5fa4b4036055022200fde326801f"
 
       def install
         bin.install "kosli"
