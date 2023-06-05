@@ -13,7 +13,7 @@ class Kosli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_darwin_arm64.tar.gz"
-      sha256 "aadeeead78b5f8d5f6461318bf2210e85e3ca614571ee41ba28d795e89359923"
+      sha256 "22f35a96c08cbe09fefb92ab031e3448e1aba7b4dbbc77288bbd8402f16afa37"
 
       def install
         bin.install "kosli"
@@ -21,7 +21,7 @@ class Kosli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_darwin_amd64.tar.gz"
-      sha256 "779926123a205982fe2dcb05171b90b4e422fa7689ff8b245de88cc3f90b26ff"
+      sha256 "0b3cae3067071334b9867e02c893ba0481fc8baefa64a7689b93c645ecbac509"
 
       def install
         bin.install "kosli"
@@ -30,17 +30,17 @@ class Kosli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_linux_amd64.tar.gz"
-      sha256 "d54edc71b4c34d2077b04abb34a15ad369da8b8e4f8354cbd0df233949790f4d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_linux_arm64.tar.gz"
+      sha256 "710ae9fe3e2221fca520735b9c0204a5958978c21e26c619021bdc506cd072aa"
 
       def install
         bin.install "kosli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_linux_arm64.tar.gz"
-      sha256 "2b15804da7ba90297906066643269c7690f56c945cb6b80f5d9817cc88b71fa5"
+    if Hardware::CPU.intel?
+      url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_linux_amd64.tar.gz"
+      sha256 "695993e40e19ce9bdc8ae0bdb2fbe1a958bd3b4a64dbf192dcef651bcfd49222"
 
       def install
         bin.install "kosli"
@@ -48,7 +48,7 @@ class Kosli < Formula
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/kosli-dev/cli/releases/download/v2.3.2/kosli_2.3.2_linux_armv6.tar.gz"
-      sha256 "51d175433d8494acd0d7af34fd47c19afc76832e1b3ef8b51fc9de6094f57091"
+      sha256 "d232980bbdf710fda4211ff8ad3a1ce44a852e89c1f6d6ef11197552d996459f"
 
       def install
         bin.install "kosli"
