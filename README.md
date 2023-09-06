@@ -1,10 +1,9 @@
-# homebrew-kosli    
+# Kosli Homebrew Tap (Deprecated)
 
-Formulas to instal kosli cli with homebrew
+`kosli` has been migrated to homebrew/core
 
-## How to install
+## Installing Kosli
 
-To install latest available version of kosli cli run
-```
-brew install kosli-dev/tap/kosli
+```shell
+brew install kosli-cli
 ```
